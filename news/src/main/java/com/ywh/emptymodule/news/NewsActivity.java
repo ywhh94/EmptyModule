@@ -5,11 +5,12 @@ import android.os.Bundle;
 
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.ywh.emptymodule.baselib.Paths;
 
-@Route(path = "/news/newsmain")
+@Route(path = Paths.newsHomePage)
 public class NewsActivity extends Activity {
     @Override
-    protected void onCreate( Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
     }

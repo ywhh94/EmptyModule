@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.ywh.emptymodule.baselib.Paths;
 
 public class MainActivity extends Activity {
     private TextView mTvNews;
@@ -23,7 +24,7 @@ public class MainActivity extends Activity {
         mTvNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ARouter.getInstance().build("/news/newsmain").navigation();
+                ARouter.getInstance().build(Paths.newsHomePage).navigation();
             }
         });
     }
