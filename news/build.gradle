@@ -6,7 +6,8 @@ if (isDebug.toBoolean()) {
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
-
+    //限定资源命名开头
+//    resourcePrefix "news_"
 
     defaultConfig {
         minSdkVersion 19
@@ -34,10 +35,20 @@ android {
             } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
                 //集成开发模式下排除debug文件夹中的所有Java文件
+                //各个模块下的这个包名好像不能重名，编译有问题
                 java {
                     exclude 'debug_news/**'
                 }
             }
+
+            //资源管理,项目比较大，layout布局太多了。
+            res.srcDirs =
+                    [
+                            'src/main/res/main_layout',//activity的layout
+                            'src/main/res/item_layout',//item的layout
+                            'src/main/res/views_layout',//自定义view的layout
+                            'src/main/res'
+                    ]
         }
     }
 
