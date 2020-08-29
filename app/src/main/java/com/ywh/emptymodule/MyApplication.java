@@ -12,5 +12,6 @@ public class MyApplication extends Application {
         ARouter.openDebug();
         ARouter.openLog();
         ARouter.init(this);
+
     }
 }
